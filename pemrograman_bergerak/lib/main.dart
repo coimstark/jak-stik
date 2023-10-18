@@ -10,13 +10,15 @@ import 'package:pemrograman_bergerak/day2.dart';
 import 'package:pemrograman_bergerak/day3.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Pemrograman Bergerak',
-    home: Home(),
+    home: MyApp(),
   ));
 }
 
-class Home extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
