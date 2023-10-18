@@ -12,7 +12,7 @@ class Day3 extends StatelessWidget {
       appBar: AppBar(title: const Text('Day 3')),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
               onPressed: () {

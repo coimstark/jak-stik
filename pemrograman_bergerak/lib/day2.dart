@@ -13,29 +13,34 @@ class Day2 extends StatefulWidget {
 
 class _Day2State extends State<Day2> {
   String _text = 'Hello World';
-  Color _appBarcolor = Colors.blue;
+  bool _appBarIsBlue = true;
   bool _appBarIsCentered = true;
+  bool _textIsStylish = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Day 2'),
-        backgroundColor: _appBarcolor,
+        backgroundColor: _appBarIsBlue ? Colors.blue : Colors.red,
         centerTitle: _appBarIsCentered,
       ),
       body: Center(
-        child: Text(_text),
+        child: Text(_text,
+            style: _textIsStylish
+                ? const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)
+                : null),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
             _text = 'Hello Flutter';
-            _appBarcolor = Colors.red;
-            _appBarIsCentered = false;
+            _appBarIsBlue = !_appBarIsBlue;
+            _appBarIsCentered = !_appBarIsCentered;
+            _textIsStylish = !_textIsStylish;
           });
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.change_circle),
       ),
     );
   }
